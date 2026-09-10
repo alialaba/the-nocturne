@@ -218,7 +218,6 @@
         padding:
             0 5vw
             10px;
-
         scroll-snap-type: x mandatory;
 
         scrollbar-width: none;
@@ -235,5 +234,55 @@
         min-height: 360px;
 
         scroll-snap-align: start;
+    }
+}
+@media (max-width: 767px) {
+    .dish {
+        min-height: auto;
+
+        padding:
+            70px 0
+            50px;
+    }
+
+    .dish__header {
+        width: 90%;
+
+        display: block;
+    }
+
+    .dish__title {
+        font-size: clamp(
+            3.5rem,
+            16vw,
+            5rem
+        );
+    }
+
+    .dish__text {
+        max-width: 280px;
+
+        margin-top: 30px;
+    }
+
+    .dish__cards {
+        margin-top: 50px;
+
+        padding-inline: 5vw;
+    }
+
+    .dish__card {
+        flex: 0 0 78vw;
+
+        min-height: 340px;
+    }
+       .dish__card:first-child .dish__card-img {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .dish__card:first-child
+    .dish__card-visual::after {
+        opacity: 1;
     }
 }

@@ -1,0 +1,136 @@
+.philosophy{
+    position: relative;
+    min-height: 700px;
+    background: var(--color-bg-base);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     isolation: isolate;
+}
+.philosophy::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: url(./assets/fio-unsplash.jpg) center / cover no-repeat;
+    -webkit-mask-image: radial-gradient(circle at 50% 45%, black 0%, transparent 60%);
+    mask-image: radial-gradient(circle at 50% 45%, black 0%, transparent 60%);
+    opacity: 0.4; /* tune to taste */
+}
+
+.philosophy__cards-outer {
+    position: relative;
+
+    z-index: 2;
+}
+.philosophy__cards-track{
+    display: flex;
+    gap: 20px;
+    
+}
+
+.philosophy-card{
+    --card-offset: 0;
+    transform: translateY(var(--card-offset));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+     padding: 14px;
+     min-height: 360px;
+
+     
+
+ background:
+        rgba(20, 15, 10, 0.38);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    overflow: hidden;
+    z-index: 1;
+
+
+
+}
+.philosophy-card:nth-child(3),
+.philosophy-card:nth-child(4){
+    transform: translateY(140px);
+}
+.philosophy__card-header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+  
+}
+.philosophy-card__number{
+    position: absolute;
+      top: 0;
+    right: 0;
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    opacity: 0.15;
+    line-height: 1;
+}
+.philosophy-card__description{
+     color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+     .philosophy__cards-outer {
+        overflow: hidden;
+    }
+
+    .philosophy__cards-track {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 5%;
+        /* lets the edge cards center properly */
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* padding: 8px 20px 16px; */
+    }
+
+    .philosophy-card {
+        flex: 0 0 clamp(240px, 75vw, 320px);
+        max-width: 280px;
+        scroll-snap-align: start;
+    }
+
+    .philosophy-card:nth-child(3),
+    .philosophy-card:nth-child(4) {
+         --card-offset: 0px;
+        transform: translateY(var(--card-offset));
+    }
+
+    .dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        pointer-events: none;
+        margin-top: 100px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+        transition: background 0.3s, border-radius 0.3s, width 0.3s;
+
+    }
+      .dot.active {
+    background: #fff;
+    width: 22px;
+    border-radius: 4px;
+  }
+
+
+}

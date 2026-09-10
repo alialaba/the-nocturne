@@ -178,30 +178,26 @@
     }
 }
 
-@media (max-width: 767px){
-    .room{
-         min-height: 100svh;
+@media (max-width: 767px) {
+    .room {
+        min-height: 100svh;
     }
 
     .room::before {
-    background:
-        linear-gradient(
-            180deg,
-            rgba(10, 8, 7, 0.35) 0%,
-            rgba(10, 8, 7, 0.55) 45%,
-            rgba(10, 8, 7, 0.92) 100%
-        ),
-        linear-gradient(
-            90deg,
-            rgba(10, 8, 7, 0.45),
-            transparent 55%,
-            rgba(10, 8, 7, 0.35)
-        ),
-        url("/assets/fio-unsplash.jpg")
-        center / cover no-repeat;
+        background:
+            linear-gradient(180deg,
+                rgba(10, 8, 7, 0.35) 0%,
+                rgba(10, 8, 7, 0.55) 45%,
+                rgba(10, 8, 7, 0.92) 100%),
+            linear-gradient(90deg,
+                rgba(10, 8, 7, 0.45),
+                transparent 55%,
+                rgba(10, 8, 7, 0.35)),
+            url("/assets/fio-unsplash.jpg") center / cover no-repeat;
         background-position: 65% center;
-}
-.room__block {
+    }
+
+    .room__block {
 
         display: flex;
 
@@ -229,12 +225,11 @@
         align-items: flex-end;
 
         padding:
-            2rem
-            clamp(1.5rem, 6vw, 2rem);
+            2rem clamp(1.5rem, 6vw, 2rem);
     }
 
 
- /* ======================
+    /* ======================
        TITLE
     ====================== */
 
@@ -275,9 +270,10 @@
 
         line-height: 1.6;
     }
-    .room__list{
 
-             position: absolute;
+    .room__list {
+
+        position: absolute;
 
         top: 50%;
 
@@ -290,8 +286,7 @@
         height: auto;
 
         padding:
-            0
-            clamp(1.5rem, 6vw, 2rem);
+            0 clamp(1.5rem, 6vw, 2rem);
 
         transform:
             translateY(-50%);
@@ -305,7 +300,7 @@
 
     }
 
-      .room__list::before {
+    .room__list::before {
         left:
             clamp(1.5rem, 6vw, 2rem);
 
@@ -316,7 +311,8 @@
         transform:
             translateY(-50%);
     }
- .room__item {
+
+    .room__item {
 
         flex:
             0 0 auto;

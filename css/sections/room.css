@@ -1,0 +1,337 @@
+.room {
+    position: relative;
+    min-height: 100svh;
+    overflow: hidden;
+    isolation: isolate;
+
+
+}
+
+.room::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg,
+            rgba(10, 10, 10, 0.75),
+            rgba(10, 10, 10, 0.2) 55%,
+            rgba(10, 10, 10, 0.45)),
+        url("/assets/fio-unsplash.jpg") center / cover no-repeat;
+}
+
+.room__block {
+
+    min-height: 100svh;
+    display: grid;
+    width: 100%;
+
+    grid-template-columns: minmax(260px, 30%) 1fr;
+
+}
+
+.room__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px clamp(24px, 4vw, 64px);
+    min-height: 100%;
+    background: rgba(20, 15, 10, 0.38);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+}
+
+.room__list::before {
+    content: "";
+    position: absolute;
+    top: 12%;
+    bottom: 12%;
+    width: 1px;
+    background-color: var(--color-border);
+}
+
+.room__item {
+    margin-left: 20px;
+    position: relative;
+}
+
+.room__item::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    border: 1px solid var(--color-text);
+    top: 50%;
+    left: -23px;
+    transform:
+        translateY(-50%);
+
+    z-index: 1;
+
+}
+
+.room__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 0;
+    padding:
+        clamp(40px, 6vw, 90px) clamp(32px, 6vw, 100px) clamp(50px, 7vw, 110px);
+
+    text-align: right;
+
+}
+
+.room__title {
+    display: flex;
+
+    flex-direction: column;
+
+    font-family:
+        var(--font-display);
+
+    font-size:
+        clamp(4rem, 8vw, 9rem);
+
+    font-weight: 400;
+
+    line-height: 0.86;
+
+    letter-spacing:
+        -0.03em;
+
+}
+
+.room__title span {
+    display: block;
+}
+
+.room__action {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    width: min(280px, 100%);
+
+
+}
+
+.room__description {
+    color:
+        var(--color-text-muted);
+
+    font-size:
+        0.85rem;
+
+    line-height:
+        1.6;
+    text-align: left;
+
+}
+
+.room button {
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    color: var(--color-text);
+
+}
+
+@media (max-width: 1024px) {
+    .room__block {
+
+        grid-template-columns:
+            minmax(180px, 25%) minmax(0, 1fr);
+
+    }
+
+
+    .room__list {
+
+        gap: 24px;
+
+        padding-inline:
+            24px;
+
+    }
+
+
+    .room__content {
+
+        padding:
+            50px 40px;
+
+    }
+
+
+    .room__title {
+
+        font-size:
+            clamp(3.5rem, 8vw, 6rem);
+
+    }
+}
+
+@media (max-width: 767px){
+    .room{
+         min-height: 100svh;
+    }
+
+    .room::before {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(10, 8, 7, 0.35) 0%,
+            rgba(10, 8, 7, 0.55) 45%,
+            rgba(10, 8, 7, 0.92) 100%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(10, 8, 7, 0.45),
+            transparent 55%,
+            rgba(10, 8, 7, 0.35)
+        ),
+        url("/assets/fio-unsplash.jpg")
+        center / cover no-repeat;
+        background-position: 65% center;
+}
+.room__block {
+
+        display: flex;
+
+        flex-direction: column;
+
+        min-height: 100svh;
+
+    }
+
+    .room__content {
+        position: relative;
+
+        z-index: 3;
+
+        width: 100%;
+
+        min-height: 100svh;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: space-between;
+
+        align-items: flex-end;
+
+        padding:
+            2rem
+            clamp(1.5rem, 6vw, 2rem);
+    }
+
+
+ /* ======================
+       TITLE
+    ====================== */
+
+    .room__title {
+        margin: 0;
+
+        align-self: flex-end;
+
+        font-size:
+            clamp(3.5rem, 17vw, 6rem);
+
+        line-height: 0.88;
+
+        text-align: right;
+    }
+
+
+    /* ======================
+       ACTION
+    ====================== */
+
+    .room__action {
+        width:
+            min(300px, 100%);
+
+        margin-top: auto;
+
+        margin-left: auto;
+
+        padding-top: 2rem;
+
+        gap: 1.75rem;
+    }
+
+
+    .room__description {
+        font-size: 0.8rem;
+
+        line-height: 1.6;
+    }
+    .room__list{
+
+             position: absolute;
+
+        top: 50%;
+
+        left: 0;
+
+        z-index: 2;
+
+        width: 100%;
+
+        height: auto;
+
+        padding:
+            0
+            clamp(1.5rem, 6vw, 2rem);
+
+        transform:
+            translateY(-50%);
+
+        gap: 18px;
+
+        background: transparent;
+
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+
+    }
+
+      .room__list::before {
+        left:
+            clamp(1.5rem, 6vw, 2rem);
+
+        top: 50%;
+
+        height: 100%;
+
+        transform:
+            translateY(-50%);
+    }
+ .room__item {
+
+        flex:
+            0 0 auto;
+
+        margin-left: 0;
+
+        padding-left: 14px;
+
+    }
+
+
+    .room__item::before {
+
+        left: 0;
+
+    }
+
+}

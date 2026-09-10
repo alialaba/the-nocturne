@@ -1,0 +1,32 @@
+/* css/base/variables.css */
+
+:root {
+    /* Colors */
+    --color-bg-base: #15120F;
+    --color-bg-panel: rgba(20, 15, 10, 0.35);
+
+    --color-overlay-start: rgba(42, 23, 16, 0.35);
+    --color-overlay-end: rgba(10, 7, 5, 0.92);
+
+    --color-glow-core: #F4C542;
+    --color-glow-mid: #C77B2E;
+
+    --color-text-primary: #FAF6EF;
+    --color-text-muted: rgba(250, 246, 239, 0.62);
+
+    --color-border-hairline: rgba(255, 255, 255, 0.14);
+    --color-border-hover: rgba(255, 255, 255, 0.28);
+
+    /* Typography */
+    --font-display: "Bodoni Moda", serif;
+    --font-body: "Jost", sans-serif;
+
+    /* UI */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 24px;
+
+    --blur-glass: 16px;
+
+    --header-height: 68px;
+}

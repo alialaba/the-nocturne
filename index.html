@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Nocturne</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400&family=Jost:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+   
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         SITE HEADER
+         ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="container">
+
+            <nav class="site-header__nav" aria-label="Main navigation">
+
+                <!-- Menu Trigger -->
+                <button type="button" class="site-header__menu-button" id="menu-toggle" aria-expanded="false"
+                    aria-controls="site-menu">
+
+                    <!-- <span id="site-header__menu-label">
+                        Menu
+                    </span> -->
+
+
+                    <span class="nav-menu-toggle__label nav-menu-toggle__label--menu">
+                        Menu
+                    </span>
+
+                    <span class="nav-menu-toggle__label nav-menu-toggle__label--close">
+                        Close
+                    </span>
+
+                </button>
+
+
+                <!-- Brand -->
+                <a href="/" class="site-header__logo" aria-label="The Nocturne homepage">
+
+                    The Nocturne
+
+
+
+                </a>
+
+
+                <!-- Reservation -->
+                <a href="#reservation" class="site-header__reserve">
+
+                    Reserve
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MENU OVERLAY
+         ===================================================== -->
+
+
+
+
+    <aside class="site-menu" id="site-menu" aria-hidden="true">
+
+        <!-- Atmospheric scene -->
+
+        <div class="site-menu__backdrop" aria-hidden="true"></div>
+
+
+        <div class="site-menu__lamp" aria-hidden="true"></div>
+
+
+        <div class="site-menu__lamp-glow" aria-hidden="true"></div>
+
+
+        <!-- Actual navigation content -->
+
+        <div class="site-menu__content">
+
+            <nav class="site-menu__navigation" aria-label="Restaurant menu">
+
+                <ul class="site-menu__list">
+
+                    <li class="site-menu__item">
+                        <a href="#starters">
+                            Starters
+                            <sup>[8]</sup>
+                        </a>
+                    </li>
+
+                    <li class="site-menu__item">
+                        <a href="#hot-dishes">
+                            Hot Dishes
+                            <sup>[12]</sup>
+                        </a>
+                    </li>
+
+                    <li class="site-menu__item">
+                        <a href="#drinks">
+                            Drinks
+                            <sup>[22]</sup>
+                        </a>
+                    </li>
+
+                    <li class="site-menu__item">
+                        <a href="#desserts">
+                            Desserts
+                            <sup>[18]</sup>
+                        </a>
+                    </li>
+
+                    <li class="site-menu__item">
+                        <a href="#specials">
+                            Specials
+                            <sup>[4]</sup>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <div class="site-menu__footer">
+
+                <a href="#reservation" class="site-menu__booking">
+
+                    <span>Book a Table</span>
+
+                    <span class="site-menu__booking-icon" aria-hidden="true">
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main>
+
+        <!-- =================================================
+             HERO
+             ================================================= -->
+
+        <section class="hero" data-hero-state="intro" aria-labelledby="hero-title">
+
+            <!-- Background image / visual layer -->
+            <div class="hero__background" aria-hidden="true"> </div>
+
+
+            <div class="container">
+
+                <div class="hero__content">
+                    <div class="hero__center">
+
+                        <!-- <div class="hero__titles">
+
+                            <h1 id="hero-title" class="hero__title hero__title--primary">
+
+                                Where The City
+                                <span>Whispers</span>
+
+                            </h1>
+
+
+                            <p class="hero__title hero__title--secondary" aria-hidden="true">
+
+                                No Rush.
+                                <span>Night Is Ours.</span>
+
+                            </p>
+
+                        </div> -->
+
+
+                        <!-- <a class="hero__booking" href="#reservation">
+
+                            <span>Book a table</span>
+
+                            <span class="hero__booking-icon" aria-hidden="true">
+
+                                →
+                            </span>
+
+                        </a> -->
+                        <div class="hero__scenes">
+
+                            <!-- PRIMARY SCENE -->
+                            <div class="hero__scene hero__scene--primary">
+
+                                <h1 class="hero__title">
+                                    Where The City
+                                    <span>Whispers</span>
+                                </h1>
+
+                                <a class="hero__booking" href="#reservation">
+                                    <span>Book a table</span>
+
+                                    <span class="hero__booking-icon" aria-hidden="true">
+                                        →
+                                    </span>
+                                </a>
+
+                            </div>
+
+
+                            <!-- SECONDARY SCENE -->
+                            <div class="hero__scene hero__scene--secondary">
+
+                                <h2 class="hero__title">
+                                    No Rush.
+                                    <span>Night Is Ours.</span>
+                                </h2>
+
+                                <a class="hero__booking" href="#reservation">
+                                    <span>Book a table</span>
+
+                                    <span class="hero__booking-icon" aria-hidden="true">
+                                        →
+                                    </span>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- =============================================
+                     HERO META
+                     ============================================= -->
+
+                    <div class="hero__footer">
+
+
+                        <!-- Countdown Card -->
+                        <div class="hero-countdown">
+
+                            <div class="hero-countdown__content">
+                                <div class="hero-countdown__label-wrap">
+                                    <p class="hero-countdown__label hero-countdown__message-current"
+                                        data-countdown-label>
+
+                                        Left to midnight menu
+
+                                    </p>
+                                    <p class="hero-countdown__label hero-countdown__label-next" aria-hidden="true">
+                                        Enjoy night menu
+                                    </p>
+
+                                </div>
+
+                                <time class="hero-countdown__time" data-countdown-time>
+
+                                    00:01:55
+
+                                </time>
+
+                                <div class="hero-countdown__message-wrap">
+                                    <p class="hero-countdown__message hero-countdown__message-current"
+                                        data-countdown-message>
+
+                                        We're almost there!
+
+                                    </p>
+
+                                    <p class="hero-countdown__message hero-countdown__message-next" aria-hidden="true">
+                                        Night is ours!
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <!-- ANALOG CLOCK -->
+
+                            <div class="analog-clock" data-clock aria-hidden="true">
+
+                                <div class="analog-clock__markers" data-clock-markers>
+                                </div>
+
+
+                                <span class="analog-clock__hand analog-clock__hand--hour" data-clock-hour>
+                                </span>
+
+                                <span class="analog-clock__hand analog-clock__hand--minute" data-clock-minute>
+                                </span>
+
+                                <span class="analog-clock__hand analog-clock__hand--second" data-clock-second>
+                                </span>
+
+                                <span class="analog-clock__center"></span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Restaurant Location -->
+                        <address class="location">
+                            143rd Avenue, London
+                        </address>
+
+
+
+                        <!-- Social Links -->
+                        <ul class="social-links">
+
+                            <li class="social-links__item">
+
+                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                                    class="social-links__link" aria-label="Visit our Instagram">
+
+                                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.6">
+
+                                        <rect x="3" y="3" width="18" height="18" rx="5" />
+
+                                        <circle cx="12" cy="12" r="4" />
+
+                                        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+
+                                    </svg>
+
+                                </a>
+
+                            </li>
+
+
+
+                            <li class="social-links__item">
+
+                                <a href="https://x.com" target="_blank" rel="noopener noreferrer"
+                                    class="social-links__link" aria-label="Visit our X (Twitter)">
+
+                                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.6">
+
+                                        <path d="M4 4l16 16M20 4L4 20" />
+
+                                    </svg>
+
+                                </a>
+
+                            </li>
+
+
+
+                            <li class="social-links__item">
+
+                                <a href="https://t.me" target="_blank" rel="noopener noreferrer"
+                                    class="social-links__link" aria-label="Visit our Telegram">
+
+                                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.6">
+
+                                        <path d="M22 3L2 11l6 2 2 6 3-4 5 4 4-16z" />
+
+                                    </svg>
+
+                                </a>
+
+                            </li>
+
+
+
+                            <li class="social-links__item">
+
+                                <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer"
+                                    class="social-links__link" aria-label="Listen on Spotify">
+
+                                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.6">
+
+                                        <circle cx="12" cy="12" r="9" />
+
+                                        <path
+                                            d="M7 10.5c3-1 7-.5 9.5 1M7.5 13.5c2.5-.8 5.8-.4 8 1M8 16.5c2-.6 4.5-.3 6.2.8"
+                                            stroke-linecap="round" />
+
+                                    </svg>
+
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- =================================================
+             STORY
+             ================================================= -->
+
+        <section class="story" aria-labelledby="story-title">
+
+            <div class="container">
+                <div class="story__inner">
+                    <div class="story__visual" aria-hidden="true">
+                        <div class="story__atmosphere"></div>
+
+                        <div class="story__moonlight">
+
+                            <div class="story__light-rays">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <!-- <div class="story__moonlight-reflection"> 
+             <span class="story__ray story__ray--one"></span>
+        <span class="story__ray story__ray--two"></span>
+        <span class="story__ray story__ray--three"></span>
+        </div> -->
+
+                    </div>
+
+
+                    <div class="story__content">
+
+                        <h2 id="story-title" class="story__title">
+
+                            Where Time Slows.
+                            And Senses Wake.
+
+                        </h2>
+
+
+                        <div class="story__description">
+
+                            <p>
+                                Dining after dark is a ritual — a balance
+                                of mood, flavor, and light. Every detail
+                                moves like a scene: the cork's sigh,
+                                the candle's glow, the quiet drift of smoke.
+                            </p>
+
+                            <p>
+                                Each night is crafted to awaken the senses.
+                                Light and shadow, warmth and silence —
+                                forming a space that breathes after midnight.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+        </section>
+
+
+
+        <!-- More sections will come here -->
+
+        <section class="philosophy">
+            <div class="container">
+
+
+                <div class="philosophy__cards-outer">
+                    <div class="philosophy__cards-track">
+
+                        <article class="philosophy-card">
+                            <div class="philosophy__card-header">
+                                <span class="philosophy-card__number" aria-hidden="true">
+                                    1
+                                </span>
+
+                                <h3 class="philosophy-card__title">
+                                    Night is ours
+                                </h3>
+
+
+                            </div>
+                            <div class="philosophy__card-body">
+                                <p class="philosophy-card__description">
+                                    Time slows. Conversations soften.
+                                    Every pour, every plate moves to
+                                    its own quiet rhythm.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="philosophy-card">
+                            <div class="philosophy__card-header">
+                                <span class="philosophy-card__number" aria-hidden="true">
+                                    2
+                                </span>
+
+                                <h3 class="philosophy-card__title">
+                                    Heat First
+                                </h3>
+
+
+                            </div>
+                            <div class="philosophy__card-body">
+                                <p class="philosophy-card__description">
+                                    The flame decide everything - sear, scent, smoke. What begins with heat ends in
+                                    silence
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="philosophy-card">
+                            <div class="philosophy__card-header">
+                                <span class="philosophy-card__number" aria-hidden="true">
+                                    3
+                                </span>
+
+                                <h3 class="philosophy-card__title">
+                                    Silence Matters
+                                </h3>
+
+
+                            </div>
+                            <div class="philosophy__card-body">
+                                <p class="philosophy-card__description">
+                                    The hush between is part of the ritual - the pause before the toast, the whisper
+                                    after.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="philosophy-card">
+                            <div class="philosophy__card-header">
+                                <span class="philosophy-card__number" aria-hidden="true">
+                                    4
+                                </span>
+
+                                <h3 class="philosophy-card__title">
+                                    Bitter Is Honest
+                                </h3>
+
+
+                            </div>
+                            <div class="philosophy__card-body">
+                                <p class="philosophy-card__description">
+                                    Bitterness is truth, sweetness a memory - balance is the craft of the midnight
+                                    kitchen.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <div class="dots" id="dots">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="room">
+            <div class="">
+                <div class="room__block">
+                    <ul class="room__list">
+                        <li class="room__item">Intimate tastings</li>
+                        <li class="room__item">absinthe ritual</li>
+                        <li class="room__item">Moonlit desert pairing</li>
+                        <li class="room__item">Private dinner</li>
+                        <li class="room__item">Vincyl Evening</li>
+                        <li class="room__item">Candle Ceremonies</li>
+                        <li class="room__item">The Chef course</li>
+                    </ul>
+
+                    <div class="room__content">
+
+                        <h2 class="room__title">
+                            <span>The Ember</span>
+                            <span>Room</span>
+                        </h2>
+
+
+                        <div class="room__action">
+
+                            <p class="room__description">
+                                Here, guests gather for quiet rituals —
+                                private tastings, absinthe ceremonies,
+                                and whispered conversations.
+                            </p>
+
+
+                            <button class="room__button" type="button">
+                                <span>Book a Room</span>
+
+                                <span class="room__button-icon" aria-hidden="true">
+                                    →
+                                </span>
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="dish" aria-labelledby="dish-title">
+            <div class="dish__header">
+                <h2 class="dish__title">
+                      Tonight's
+    <span>Special</span>
+                    <!-- <span class="dish__title-line">Tonight's</span>
+                    <span class="dish__title-line">Special</span> -->
+                </h2>
+                <p class="dish__text">Small plates design to awaken the senses. Each dish combines warmth, contrast and
+                    textture setting the tone for the meal ahead</p>
+            </div>
+           <div class="dish__cards-outer">
+            <div class="dish__cards">
+                <article class="dish__card">
+                    <div class="dish__card-visual">
+                        <img class="dish__card-img" src="./assets/phil-hearing-Ee5FZp9MJlI-unsplash.jpg" alt="Creamy Herb Chicken" />
+                    </div>
+
+                    <p class="dish__card-text">Creamy Herb Chicken </p>
+                </article>
+                <article class="dish__card">
+                    <div class="dish__card-visual">
+                        <img class="dish__card-img" src="./assets/peter-dawn-3X7SVgAxKU8-unsplash.jpg" alt="Salman with lemon mash" />
+                    </div>
+                    <p class="dish__card-text">Salman with lemon mash </p>
+                </article>
+                <article class="dish__card">
+                    <div class="dish__card-visual">
+                        <img class="dish__card-img" src="" alt="" />
+                    </div>
+                    <p class="dish__card-text">Roasted Chicken Medley </p>
+                </article>
+                <article class="dish__card">
+                    <div class="dish__card-visual">
+                        <img class="dish__card-img" src="" alt="" />
+                    </div>
+                    <p class="dish__card-text">Chef's Secret Plate </p>
+                </article>
+            </div>
+            </div>
+            <button class="dish__action" type="button">
+                <span>Learn More</span>
+                <span aria-hidden="true">→</span>
+            </button>
+        </section>
+
+        <section class="book-table">
+
+          <div class="book-table__block">
+           <header class="book-table__header">
+              <h2 class="book-table__title">Book A Table</h2>
+           </header>
+           <div class="book-table__form-wrapper">
+              <form class="book-table__form">
+                  <div class="book-table__field">
+
+                    <label for="guests" class="book-table__label">
+                        <span class="book-table__label-text">
+                            No of Person
+                        </span>
+                    </label>
+
+                    <div class="book-table__control">
+
+                        <span
+                            class="book-table__icon"
+                            aria-hidden="true"
+                        >
+                            ♙
+                        </span>
+
+                        <select
+                            id="guests"
+                            name="guests"
+                            aria-label="Number of people"
+                            required
+                        >
+                            <option value="" selected disabled>
+                                1 Person
+                            </option>
+
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6">6 People</option>
+                        </select>
+
+                        <span
+                            class="book-table__arrow"
+                            aria-hidden="true"
+                        ></span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DATE -->
+                <div class="book-table__field">
+
+                    <label for="date" class="book-table__label">
+                        <span class="book-table__label-text">
+                            Date
+                        </span>
+                    </label>
+
+                    <div class="book-table__control">
+
+                        <span
+                            class="book-table__icon"
+                            aria-hidden="true"
+                        >
+                            ◷
+                        </span>
+
+                        <input
+                            type="date"
+                            id="date"
+                            name="date"
+                            aria-label="Reservation date"
+                            required
+                        />
+
+                        <span
+                            class="book-table__arrow"
+                            aria-hidden="true"
+                        ></span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TIME -->
+                <div class="book-table__field">
+
+                    <label for="time" class="book-table__label">
+                        <span class="book-table__label-text">
+                            Time
+                        </span>
+                    </label>
+
+                    <div class="book-table__control">
+
+                        <span
+                            class="book-table__icon"
+                            aria-hidden="true"
+                        >
+                            ◷
+                        </span>
+
+                        <select
+                            id="time"
+                            name="time"
+                            aria-label="Reservation time"
+                            required
+                        >
+                            <option value="" selected disabled>
+                                Select time
+                            </option>
+
+                            <option value="18:00">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="20:30">8:30 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                            <option value="21:30">9:30 PM</option>
+                            <option value="22:00">10:00 PM</option>
+                        </select>
+
+                        <span
+                            class="book-table__arrow"
+                            aria-hidden="true"
+                        ></span>
+
+                    </div>
+
+                </div>
+
+
+                <button class="book-table__submit"
+                    type="submit"><span>Book A Table</span>
+                 <span
+                        class="book-table__submit-icon"
+                        aria-hidden="true"
+                    >
+                        →
+                    </span>
+                </button>
+              </form>
+           </div>
+   
+          </div>
+        </section>
+
+<section class="experience">
+
+    <!-- Visual / Editorial Header -->
+    <header class="experience__header">
+
+        <div
+            class="experience__moonlight"
+            aria-hidden="true"
+        ></div>
+
+        <h2 class="experience__title">
+            <span>Real</span>
+            <span>Experience</span>
+        </h2>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <div class="experience__body">
+
+        <!-- Testimonial -->
+        <article class="experience__testimonial"  aria-label="Customer testimonial">
+
+            <div class="experience__rating">
+
+                <p class="experience__number">
+                    5<span aria-hidden="true">/5</span>
+                </p>
+
+                <span
+                    class="experience__star"
+                    aria-label="5 out of 5 stars"
+                >
+                    ★★★★★
+                </span>
+
+            </div>
+
+
+            <div class="experience__content">
+
+                <blockquote class="experience__note"    aria-live="polite"></blockquote>
+
+                <cite class="experience__customer" aria-live="polite"></cite>
+
+                <div class="experience__navigator-wrapper">
+
+                    <button
+                        class="experience__navigator experience__navigator-left"
+                        type="button"
+                        aria-label="Previous testimonial"
+                    >
+                        ←
+                    </button>
+
+                    <button
+                        class="experience__navigator experience__navigator-right"
+                        type="button"
+                        aria-label="Next testimonial"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- Customer Image -->
+        <figure class="experience__media">
+
+            <img
+                class="experience__img"
+                src="./assets/louis-hansel-7qeQXRppR9o-unsplash.jpg"
+                alt="Restaurant guest enjoying an evening meal"
+            >
+
+        </figure>
+
+    </div>
+
+</section>
+    </main>
+
+
+
+
+<footer class="footer">
+    <div class="footer__block">
+
+        <!-- Top information -->
+        <div class="footer__top">
+
+            <p class="footer__hours">
+                24-Hour Restaurant
+            </p>
+
+            <address class="footer__location">
+                143rd Avenue, London
+            </address>
+
+            <ul class="footer__social" aria-label="Social media links">
+
+                <li class="footer__social-item">
+                    <a
+                        href="https://instagram.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="footer__social-link"
+                        aria-label="Visit our Instagram"
+                    >
+                        <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.6">
+
+                                        <rect x="3" y="3" width="18" height="18" rx="5" />
+
+                                        <circle cx="12" cy="12" r="4" />
+
+                                        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+
+                                    </svg>
+                    </a>
+                </li>
+
+                <li class="footer__social-item">
+                    <a
+                        href="https://x.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="footer__social-link"
+                        aria-label="Visit our X profile"
+                    >
+                       <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.6">
+
+                                        <path d="M4 4l16 16M20 4L4 20" />
+
+                                    </svg>
+                    </a>
+                </li>
+
+                <li class="footer__social-item">
+                    <a
+                        href="https://t.me"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="footer__social-link"
+                        aria-label="Visit our Telegram"
+                    >
+                       <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.6">
+
+                                        <path d="M22 3L2 11l6 2 2 6 3-4 5 4 4-16z" />
+
+                                    </svg>
+                    </a>
+                </li>
+
+                <li class="footer__social-item">
+                    <a
+                        href="https://open.spotify.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="footer__social-link"
+                        aria-label="Listen to us on Spotify"
+                    >
+                        <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.6">
+
+                                        <circle cx="12" cy="12" r="9" />
+
+                                        <path
+                                            d="M7 10.5c3-1 7-.5 9.5 1M7.5 13.5c2.5-.8 5.8-.4 8 1M8 16.5c2-.6 4.5-.3 6.2.8"
+                                            stroke-linecap="round" />
+
+                                    </svg>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!-- Main wordmark -->
+        <div class="footer__brand">
+            <h2 class="footer__logo-text">
+                The Nocturne
+            </h2>
+        </div>
+
+
+        <!-- Bottom legal/navigation -->
+        <div class="footer__bottom">
+
+            <p class="footer__copyright">
+                &copy; <span id="year">2026</span> THE NOCTURNE™
+            </p>
+
+            <a href="#" class="footer__link">
+                Cookie Policy
+            </a>
+
+            <a href="#" class="footer__link">
+                Terms &amp; Conditions
+            </a>
+
+            <p class="footer__credit">
+                Site by Phenomenon
+            </p>
+
+        </div>
+
+    </div>
+</footer>
+    <!-- =====================================================
+         SCRIPTS
+         ===================================================== -->
+
+    <script type="module" src="./js/main.js"></script>
+
+</body>
+
+</html>

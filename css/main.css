@@ -1,0 +1,20 @@
+/* css/main.css */
+
+@import url("./base/reset.css");
+@import url("./base/variables.css");
+@import url("./base/typography.css");
+@import url("./base/accessibility.css");
+
+@import url("./components/buttons.css");
+
+@import url("./layout/global.css");
+@import url("./layout/header.css");
+@import url("./layout/footer.css");
+
+@import url("./sections/hero.css");
+@import url("./sections/story.css");
+@import url("./sections/philosophy.css");
+@import url("./sections/room.css");
+@import url("./sections/dish.css");
+@import url("./sections/book-table.css");
+@import url("./sections/experience.css");

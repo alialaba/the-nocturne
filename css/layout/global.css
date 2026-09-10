@@ -1,0 +1,18 @@
+body {
+    overflow-x: hidden;
+      background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+section {
+    position: relative;
+}
+
+.container {
+    width: min(1600px, 90%);
+    margin: 0 auto;
+}

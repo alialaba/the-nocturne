@@ -1,32 +1,110 @@
-/* css/base/variables.css */
+/* =========================================================
+    DESIGN TOKENS
+   ========================================================= */
+   :root {
 
-:root {
-    /* Colors */
-    --color-bg-base: #15120F;
-    --color-bg-panel: rgba(20, 15, 10, 0.35);
+    /* ---------- Colors ---------- */
 
-    --color-overlay-start: rgba(42, 23, 16, 0.35);
-    --color-overlay-end: rgba(10, 7, 5, 0.92);
+    --color-bg: #0d0c0b;
 
-    --color-glow-core: #F4C542;
-    --color-glow-mid: #C77B2E;
+    --color-surface:
+        rgba(20, 15, 10, 0.30);
 
-    --color-text-primary: #FAF6EF;
-    --color-text-muted: rgba(250, 246, 239, 0.62);
+    --color-surface-strong:
+        rgba(15, 12, 10, 0.72);
 
-    --color-border-hairline: rgba(255, 255, 255, 0.14);
-    --color-border-hover: rgba(255, 255, 255, 0.28);
+    --color-text:
+        #faf6ef;
+--color-text-primary: var(--color-text);
+--color-bg-base: var(--color-bg);
+--font-utility: var(--font-body);
+    --color-text-muted:
+        rgba(250, 246, 239, 0.62);
 
-    /* Typography */
-    --font-display: "Bodoni Moda", serif;
-    --font-body: "Jost", sans-serif;
+    --color-border:
+        rgba(255, 255, 255, 0.14);
 
-    /* UI */
-    --radius-sm: 8px;
-    --radius-md: 14px;
-    --radius-lg: 24px;
+    --color-border-hover:
+        rgba(255, 255, 255, 0.28);
 
-    --blur-glass: 16px;
+    --color-accent:
+        #f4c542;
 
-    --header-height: 68px;
+    --color-accent-dark:
+        #c77b2e;
+
+
+    /* ---------- Typography ---------- */
+
+    --font-display:
+        "Bodoni Moda", serif;
+
+    --font-body:
+        "Jost", sans-serif;
+
+
+    /* ---------- Layout ---------- */
+
+    --container-width:
+        1600px;
+
+    --container-padding: 5%;
+
+    /* --gutter:
+        32px; */
+
+    --header-height:
+        68px;
+
+      
+
+
+    /* ---------- Effects ---------- */
+
+    --glass-blur:
+        18px;
+
+    --hero-blur:
+        10px;
+
+
+    /* ---------- Radius ---------- */
+
+    --radius-sm:
+        6px;
+
+    --radius-md:
+        8px;
+
+
+    /* ---------- Motion ---------- */
+
+    --ease-out:
+        cubic-bezier(0.22, 1, 0.36, 1);
+
+    --ease-smooth:
+        cubic-bezier(0.65, 0, 0.35, 1);
+
+
+         --ease-editorial:
+        cubic-bezier(0.22, 1, 0.36, 1);
+
+    --hero-exit-duration:
+        700ms;
+
+    --hero-enter-duration:
+        900ms;
+
+         --hero-exit-title:
+        700ms;
+
+    --hero-exit-button:
+        550ms;
+
+    --hero-enter-title:
+        1000ms;
+
+    --hero-enter-button:
+        600ms;
+
 }

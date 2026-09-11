@@ -1,0 +1,546 @@
+/* ========================================
+   EXPERIENCE
+======================================== */
+
+.experience {
+    position: relative;
+
+    min-height: 100svh;
+
+    background: var(--color-bg-base);
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   EXPERIENCE HEADER
+   Atmospheric / editorial layer
+======================================== */
+
+.experience__header {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+    
+}
+
+
+/* ========================================
+   MOONLIGHT
+======================================== */
+
+.experience__moonlight {
+     position: absolute;
+    top: 25px;
+    left: 0%;
+
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #fff4a0 0%,
+            #ffe05a 12%,
+            #f4c542 28%,
+            rgba(244, 197, 66, 0.75) 40%,
+            rgba(199, 123, 46, 0.38) 53%,
+            rgba(120, 55, 20, 0.15) 66%,
+            transparent 78%
+        );
+
+    filter: blur(5px);
+    pointer-events: none;
+    z-index: 0;
+
+}
+
+
+/* Large atmospheric bloom around moon */
+
+.experience__moonlight::before {
+    content: "";
+    position: absolute;
+
+    top: -80px;
+    left: -70px;
+
+    width: 520px;
+    height: 420px;
+
+    background:
+        radial-gradient(
+            ellipse at 20% 25%,
+            rgba(255, 205, 80, 0.32) 0%,
+            rgba(218, 119, 38, 0.20) 18%,
+            rgba(145, 59, 23, 0.10) 38%,
+            transparent 70%
+        );
+
+    filter: blur(45px);
+}
+
+.experience__moonlight::after {
+    content: "";
+    position: absolute;
+
+    top: 65px;
+    left: 100px;
+
+    width: 520px;
+    height: 180px;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(244, 197, 66, 0.25),
+            rgba(199, 123, 46, 0.13) 30%,
+            rgba(120, 55, 20, 0.05) 60%,
+            transparent 90%
+        );
+
+    filter: blur(35px);
+    transform: rotate(-8deg);
+    transform-origin: left center;
+}
+/* ========================================
+   EXPERIENCE TITLE
+======================================== */
+
+.experience__title {
+    position: absolute;
+
+    top: 25px;
+    left: 50%;
+
+   right: auto;
+
+    width: 100%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    margin: 0;
+    padding-inline: 2%;
+
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 400;
+    line-height: 0.75;
+
+    color: var(--color-text-primary);
+    text-align: right;
+
+    pointer-events: none;
+}
+.experience__title span {
+    display: block;
+}
+
+
+
+/* ========================================
+   EXPERIENCE BODY
+======================================== */
+
+.experience__body {
+    position: relative;
+
+    z-index: 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(
+        2,
+        minmax(0, 1fr)
+    );
+
+    width: min(100%, 1000px);
+
+    min-height: 100svh;
+
+    margin-inline: auto;
+
+    padding-inline: clamp(24px, 4vw, 50px);
+
+    padding-block: 30px;
+}
+
+
+/* ========================================
+   TESTIMONIAL COLUMN
+======================================== */
+
+.experience__testimonial {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    width: 100%;
+
+    padding-bottom: 20px;
+}
+
+
+/* ========================================
+   RATING
+======================================== */
+
+.experience__rating {
+    width: min(100%, 300px);
+}
+
+
+.experience__number {
+    margin: 0 0 5px;
+
+    font-size: 1rem;
+
+    color: var(--color-text-primary);
+}
+
+
+.experience__number span {
+    color: var(--color-text-muted);
+
+    font-size: 0.65rem;
+}
+
+
+.experience__star {
+    display: block;
+
+    font-size: 1rem;
+
+    letter-spacing: 2px;
+
+    color: var(--color-text-primary);
+}
+
+
+/* ========================================
+   TESTIMONIAL CONTENT
+======================================== */
+
+.experience__content {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    /* width: min(100%, 4000px); */
+
+    margin-top: 42px;
+}
+
+
+.experience__note {
+    margin: 0;
+
+    font-family: var(--font-body);
+
+    font-size: 1.25rem;
+
+    line-height: 1.55;
+
+    color: var(--color-text-primary);
+}
+
+.experience__line {
+    display: block;
+    overflow: hidden;
+}
+
+.experience__line-inner {
+    display: block;
+    transform: translateY(0);
+    will-change: transform;
+}
+
+
+.experience__customer {
+    margin-top: 20px;
+
+    font-style: normal;
+
+    font-size: 0.9rem;
+
+    line-height: 1.4;
+
+    color: var(--color-text-muted);
+    display: block;
+        overflow: hidden;
+
+      will-change: transform, opacity;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.experience__navigator-wrapper {
+    display: flex;
+
+    gap: 0.5rem;
+
+    margin-top: 58px;
+}
+
+
+.experience__navigator {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 0;
+
+    border: 1px solid var(--color-border);
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: var(--color-text-muted);
+
+    font: inherit;
+
+    cursor: pointer;
+
+    transition:
+        border-color 250ms ease,
+        color 250ms ease,
+        background 250ms ease;
+}
+
+
+.experience__navigator:hover {
+    border-color: var(--color-border-hover);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: var(--color-text-primary);
+}
+
+
+.experience__navigator:focus-visible {
+    outline: 2px solid var(--color-glow-core);
+
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   MEDIA COLUMN
+======================================== */
+
+.experience__media {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: flex-end;
+}
+
+
+.experience__img {
+    display: block;
+
+    width: 72%;
+    height: 78%;
+
+    object-fit: cover;
+
+    position: relative;
+
+    z-index: 1;
+      will-change: transform, opacity;
+}
+
+@media (max-width: 1024px) {
+    .experience__body {
+        width: min(100%, 900px);
+
+        padding-inline: 30px;
+    }
+
+
+    .experience__moonlight {
+        width: 190px;
+
+        left: 5%;
+    }
+
+
+    .experience__title {
+        right: 3%;
+
+        font-size: clamp(
+            3.5rem,
+            9vw,
+            6rem
+        );
+    }
+
+
+    .experience__img {
+        width: 78%;
+        height: 72%;
+        
+    }
+     .experience__content,
+    .experience__rating {
+        width: min(100%, 280px);
+    }
+
+    .experience__note {
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    .experience__navigator-wrapper {
+        margin-top: 45px;
+    }
+}
+@media (max-width: 767px) {
+      .experience__block {
+        display: block;
+        padding: 0;
+    }
+
+    .experience__media {
+        display: none;
+    }
+
+    .experience__testimonial {
+        min-height: 100svh;
+        padding: 120px 24px 30px;
+    }
+
+    
+    .experience {
+        min-height: 100svh;
+    }
+
+
+    /* -------------------------------
+       Header
+    -------------------------------- */
+
+    .experience__header {
+        position: absolute;
+    }
+
+
+    .experience__moonlight {
+      top: 25px;
+        right: 8%;
+        left: auto;
+        width: 180px;
+    }
+
+
+    .experience__title {
+        top: 35px;
+        right: 20px;
+
+        font-size: clamp(
+            3rem,
+            15vw,
+            5rem
+        );
+
+        line-height: 0.8;
+    }
+
+
+  
+
+    /* -------------------------------
+       Body
+    -------------------------------- */
+
+    .experience__body {
+        display: block;
+
+        width: 100%;
+
+        min-height: 100svh;
+
+        padding: 0;
+    }
+
+
+    /* -------------------------------
+       Hide customer image
+    -------------------------------- */
+
+    .experience__media {
+        display: none;
+    }
+
+
+    /* -------------------------------
+       Testimonial
+    -------------------------------- */
+
+    .experience__testimonial {
+        width: 100%;
+
+        min-height: 100svh;
+
+        padding:
+            180px
+            24px
+            30px;
+    }
+
+
+    .experience__rating,
+    .experience__content {
+        width: min(100%, 340px);
+    }
+
+
+    .experience__content {
+        margin-top: 35px;
+    }
+
+
+    .experience__note {
+        font-size: 0.95rem;
+
+        line-height: 1.6;
+    }
+
+
+    .experience__customer {
+        margin-top: 18px;
+    }
+
+
+    .experience__navigator-wrapper {
+        margin-top: 45px;
+    }
+}

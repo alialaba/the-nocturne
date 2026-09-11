@@ -1,4 +1,4 @@
-.philosophy{
+.philosophy {
     position: relative;
     min-height: 700px;
     background: var(--color-bg-base);
@@ -6,9 +6,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-     isolation: isolate;
+    isolation: isolate;
 }
-.philosophy::before{
+
+.philosophy::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -17,7 +18,8 @@
     background: url(./assets/fio-unsplash.jpg) center / cover no-repeat;
     -webkit-mask-image: radial-gradient(circle at 50% 45%, black 0%, transparent 60%);
     mask-image: radial-gradient(circle at 50% 45%, black 0%, transparent 60%);
-    opacity: 0.4; /* tune to taste */
+    opacity: 0.4;
+    /* tune to taste */
 }
 
 .philosophy__cards-outer {
@@ -25,24 +27,25 @@
 
     z-index: 2;
 }
-.philosophy__cards-track{
+
+.philosophy__cards-track {
     display: flex;
     gap: 20px;
-    
+
 }
 
-.philosophy-card{
+.philosophy-card {
     --card-offset: 0;
     transform: translateY(var(--card-offset));
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-     padding: 14px;
-     min-height: 360px;
+    padding: 14px;
+    min-height: 360px;
 
-     
 
- background:
+
+    background:
         rgba(20, 15, 10, 0.38);
 
     backdrop-filter: blur(12px);
@@ -56,33 +59,37 @@
 
 
 }
+
 .philosophy-card:nth-child(3),
-.philosophy-card:nth-child(4){
+.philosophy-card:nth-child(4) {
     transform: translateY(140px);
 }
-.philosophy__card-header{
+
+.philosophy__card-header {
     position: relative;
     display: flex;
     align-items: center;
     /* justify-content: center; */
-  
+
 }
-.philosophy-card__number{
+
+.philosophy-card__number {
     position: absolute;
-      top: 0;
+    top: 0;
     right: 0;
     font-size: clamp(2.5rem, 8vw, 5.5rem);
     opacity: 0.15;
     line-height: 1;
 }
-.philosophy-card__description{
-     color: var(--color-text-muted);
+
+.philosophy-card__description {
+    color: var(--color-text-muted);
     font-size: 0.95rem;
     line-height: 1.5;
 }
 
 @media (max-width: 1024px) {
-     .philosophy__cards-outer {
+    .philosophy__cards-outer {
         overflow: hidden;
     }
 
@@ -106,7 +113,7 @@
 
     .philosophy-card:nth-child(3),
     .philosophy-card:nth-child(4) {
-         --card-offset: 0px;
+        --card-offset: 0px;
         transform: translateY(var(--card-offset));
     }
 
@@ -126,11 +133,12 @@
         transition: background 0.3s, border-radius 0.3s, width 0.3s;
 
     }
-      .dot.active {
-    background: #fff;
-    width: 22px;
-    border-radius: 4px;
-  }
+
+    .dot.active {
+        background: #fff;
+        width: 22px;
+        border-radius: 4px;
+    }
 
 
 }

@@ -3,8 +3,6 @@
     min-height: 100svh;
     overflow: hidden;
     isolation: isolate;
-
-
 }
 
 .room::before {
@@ -26,7 +24,6 @@
     min-height: 100svh;
     display: grid;
     width: 100%;
-
     grid-template-columns: minmax(260px, 30%) 1fr;
 
 }
@@ -70,7 +67,6 @@
     left: -23px;
     transform:
         translateY(-50%);
-
     z-index: 1;
 
 }
@@ -84,9 +80,7 @@
     min-width: 0;
     padding:
         clamp(40px, 6vw, 90px) clamp(32px, 6vw, 100px) clamp(50px, 7vw, 110px);
-
     text-align: right;
-
 }
 
 .room__title {
@@ -198,32 +192,21 @@
     }
 
     .room__block {
-
         display: flex;
-
         flex-direction: column;
-
         min-height: 100svh;
 
     }
 
     .room__content {
         position: relative;
-
         z-index: 3;
-
         width: 100%;
-
         min-height: 100svh;
-
         display: flex;
-
         flex-direction: column;
-
         justify-content: space-between;
-
         align-items: flex-end;
-
         padding:
             2rem clamp(1.5rem, 6vw, 2rem);
     }
@@ -235,14 +218,10 @@
 
     .room__title {
         margin: 0;
-
         align-self: flex-end;
-
         font-size:
             clamp(3.5rem, 17vw, 6rem);
-
         line-height: 0.88;
-
         text-align: right;
     }
 
@@ -254,47 +233,31 @@
     .room__action {
         width:
             min(300px, 100%);
-
         margin-top: auto;
-
         margin-left: auto;
-
         padding-top: 2rem;
-
         gap: 1.75rem;
     }
 
 
     .room__description {
         font-size: 0.8rem;
-
         line-height: 1.6;
     }
 
     .room__list {
-
         position: absolute;
-
         top: 50%;
-
         left: 0;
-
         z-index: 2;
-
         width: 100%;
-
         height: auto;
-
         padding:
             0 clamp(1.5rem, 6vw, 2rem);
-
         transform:
             translateY(-50%);
-
         gap: 18px;
-
         background: transparent;
-
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
 
@@ -303,29 +266,22 @@
     .room__list::before {
         left:
             clamp(1.5rem, 6vw, 2rem);
-
         top: 50%;
-
         height: 100%;
-
         transform:
             translateY(-50%);
     }
 
     .room__item {
-
         flex:
             0 0 auto;
-
         margin-left: 0;
-
         padding-left: 14px;
 
     }
 
 
     .room__item::before {
-
         left: 0;
 
     }

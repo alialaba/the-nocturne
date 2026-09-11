@@ -737,9 +737,7 @@ body.menu-open {
             translateY(35px);
     }
 
-    .site-menu__item a {
-       
-    }
+  
 
     .site-menu__list {
         gap: 15px;

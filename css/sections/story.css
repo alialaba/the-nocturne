@@ -4,16 +4,11 @@
 
 .story {
     position: relative;
-
     min-height: 100svh;
-
     background:
         var(--color-bg);
-
     color: var(--color-text);
     overflow: hidden;
-
-    /* padding-block: 120px; */
 }
 
 .story__inner {
@@ -26,7 +21,6 @@
 
 .story__visual {
     position: relative;
-
     min-height: 100%;
     border-radius: 100%;
     aspect-ratio: 1/1;
@@ -106,7 +100,6 @@
 
 
 .story__content {
-    /* max-width: 600px; */
     position: relative;
     padding:
 
@@ -137,7 +130,7 @@
     max-width: 720px;
 }
 
-.story__description p {
+.story__description-text{
     color:
         var(--color-text-muted);
 

@@ -102,8 +102,6 @@
 
     padding-block:
         100px 40px;
-
-    /* margin-top: -20px; */
 }
 
 /* =========================================================
@@ -112,37 +110,26 @@
 
 .hero__scenes {
     position: relative;
-
     width: 100%;
     min-height: clamp(180px, 20vw, 300px);
-
     display: grid;
-
     place-items: center;
 }
 
 .hero__scene {
     grid-area: 1 / 1;
-
     width: 100%;
     height: 100%;
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
-
     text-align: center;
-
     pointer-events: none;
 }
 
 .hero__title {
     grid-area: 1 / 1;
-
     width: 100%;
     max-width: 900px;
 
@@ -291,21 +278,7 @@
     transition-delay: 0s;
 }
 
-/* .hero[data-hero-state="night"]
-.hero__scene--primary {
-    pointer-events: none;
-    z-index: 1;
-    visibility: hidden;
-} */
-/* .hero[data-hero-state="night"]
-.hero__scene--secondary {
 
-    opacity: 1;
-
-    pointer-events: auto;
-    visibility: visible;
-
-} */
 .hero[data-hero-state="night"] .hero__scene--secondary .hero__booking {
 
     opacity: 1;
@@ -313,10 +286,7 @@
     transform:
         translateY(0);
 
-    transition:
-
-        opacity 450ms ease 500ms,
-
+    transition: opacity 450ms ease 500ms,
         transform 600ms var(--ease-editorial) 500ms;
 
 }
@@ -342,11 +312,8 @@
 
 .hero__booking {
     display: inline-flex;
-
     align-items: center;
-
     gap: 10px;
-
     margin-top: 38px;
 
     color: var(--color-text);
@@ -419,12 +386,8 @@
 .hero-countdown {
     justify-content: start;
     width: min(280px, 100%);
-    /* min-width: 190px; */
-
     padding: 13px 12px;
-
     border: 1px solid var(--color-border);
-
     background:
         rgba(20, 15, 10, 0.22);
 
@@ -434,7 +397,6 @@
     -webkit-backdrop-filter:
         blur(12px);
     border-radius: var(--radius-sm);
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -443,9 +405,6 @@
 .countdown-card__content {
     height: 100%;
     min-width: 108px;
-    /* display: flex;
-  align-items: center;
-  justify-content: space-between; */
     gap: 12px;
 }
 
@@ -453,9 +412,7 @@
 
 .hero-countdown__label-wrap,
 .hero-countdown__message-wrap {
-
     position: relative;
-
     overflow: hidden;
 
 }
@@ -478,11 +435,8 @@
 
 .hero-countdown__label-next,
 .hero-countdown__message-next {
-
     position: absolute;
-
     inset: 0;
-
     transform:
         translateY(100%);
 
@@ -499,7 +453,6 @@
 .hero[data-hero-state="night"] .hero-countdown__label-current,
 
 .hero[data-hero-state="night"] .hero-countdown__message-current {
-
     transform:
         translateY(-100%);
 
@@ -513,7 +466,6 @@
 
     transform:
         translateY(0);
-
     opacity: 1;
 
 }
@@ -522,13 +474,9 @@
 .hero-countdown__message {
     color:
         var(--color-text-muted);
-
     font-size: .8rem;
-
     font-weight: 400;
-
     line-height: 1.4;
-
     transition:
         opacity 400ms ease,
         transform 400ms var(--ease-out);
@@ -537,12 +485,9 @@
 
 .hero-countdown__time {
     display: block;
-
     margin-block: 5px;
-
     color:
         var(--color-text-primary);
-
     font-family:
         var(--font-utility);
 
@@ -562,9 +507,7 @@
     --clock-size: 108px;
     width: var(--clock-size);
     height: var(--clock-size);
-    /* border: 1px solid var(--color-border); */
     flex-shrink: 0;
-
     border-radius: 100%;
     opacity: 0.65;
 
@@ -577,7 +520,6 @@
 
 .analog-clock__markers {
     position: absolute;
-
     inset: 0;
 }
 
@@ -586,10 +528,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-
     width: 3px;
     height: 3px;
-
     border-radius: 50%;
 
     background:
@@ -619,7 +559,6 @@
 
     box-shadow:
         0 0 5px rgba(199, 123, 46, 0.25);
-
     transform:
 
         translate(-50%, -50%) rotate(var(--angle)) translateX(45px) scale(1.15);
@@ -633,7 +572,6 @@
     width: 1px;
     transform-origin:
         50% 100%;
-
     transform:
         translateX(-50%);
     background:
@@ -659,13 +597,10 @@
 
 .analog-clock__center {
     position: absolute;
-
     top: 50%;
     left: 50%;
-
     width: 4px;
     height: 4px;
-
     border-radius: 50%;
 
     background-color: var(--color-accent-dark);
@@ -673,44 +608,16 @@
         translate(-50%, -50%);
 }
 
-
-/* .analog-clock__marker.is-night {
-    background: red;
-
-    box-shadow:
-        0 0 7px
-        rgba(199, 123, 46, 0.4);
-} */
-/* .analog-clock__marker.is-night {
-    background:
-        var(--color-glow-mid);
-
-    box-shadow:
-        0 0 7px
-        rgba(199, 123, 46, 0.35);
-} */
-/* Clock center */
-
-
-
-/* Clock hand */
-
 /* =========================================================
    13. LOCATION
    ========================================================= */
 .location {
     justify-self: center;
-
     padding-bottom: 2px;
-
     color: var(--color-text);
-
     font-size: 8px;
-
     font-weight: 400;
-
     letter-spacing: 0.18em;
-
     text-transform: uppercase;
 }
 
@@ -720,7 +627,6 @@
 .social-links {
     justify-self: end;
     display: flex;
-
     gap: 7px;
 }
 
@@ -731,7 +637,6 @@
     width: 30px;
     height: 30px;
     border: 1px solid var(--color-border);
-
     color: var(--color-text);
     border-radius: var(--radius-sm);
     transition:
@@ -779,7 +684,6 @@
 @media (max-width: 767px) {
 
     .hero__footer {
-
         grid-template-columns: minmax(0, 1fr) auto;
         align-items: end;
         gap: clamp(0.75rem, 4vw, 1.5rem);

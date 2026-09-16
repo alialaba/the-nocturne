@@ -195,3 +195,23 @@ if (bookTable) {
 
     bookTableObserver.observe(bookTable);
 }
+
+
+const experience = document.querySelector(".experience");
+
+if (experience) {
+    const experienceObserver = new IntersectionObserver(
+        ([entry], observer) => {
+            if (!entry.isIntersecting) return;
+
+            experience.classList.add("experience--visible");
+
+            observer.unobserve(entry.target);
+        },
+        {
+            threshold: 0.25,
+        }
+    );
+
+    experienceObserver.observe(experience);
+}

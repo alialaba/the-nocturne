@@ -356,6 +356,57 @@
       will-change: transform, opacity;
 }
 
+
+/* ========================================
+   EXPERIENCE — SCROLL REVEAL
+======================================== */
+
+.experience__moonlight,
+.experience__title,
+.experience__body {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(20px);
+}
+
+/* visible state */
+.experience.experience--visible .experience__moonlight {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+
+    transition:
+        opacity 900ms var(--ease-smooth),
+        filter 900ms var(--ease-smooth),
+        transform 900ms var(--ease-editorial);
+}
+
+.experience.experience--visible .experience__title {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+
+    transition:
+        opacity 700ms var(--ease-smooth),
+        filter 700ms var(--ease-smooth),
+        transform 750ms var(--ease-editorial);
+
+    transition-delay: 150ms;
+}
+
+.experience.experience--visible .experience__body {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+
+    transition:
+        opacity 750ms var(--ease-smooth),
+        filter 750ms var(--ease-smooth),
+        transform 800ms var(--ease-editorial);
+
+    transition-delay: 300ms;
+}
+
 @media (max-width: 1024px) {
     .experience__body {
         width: min(100%, 900px);

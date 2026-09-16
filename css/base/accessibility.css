@@ -67,4 +67,22 @@
     transform: none;
     transition: none;
 }
+
+.book-table__title,
+.book-table__description,
+.book-table__form-wrapper {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+}
+
+.experience__moonlight,
+.experience__title,
+.experience__body {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+}
 }

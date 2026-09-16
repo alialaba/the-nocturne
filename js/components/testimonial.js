@@ -145,14 +145,19 @@ experienceImage.src =
 
 // OUTGOING ANIMATION
 
+// ========================================
+// TESTIMONIAL — OUTGOING ANIMATION
+// ========================================
+
 async function animateTestimonialOut(lines) {
 
-    const lineDuration = 400;
-    const lineStagger = 180;
-    const customerDuration = 450;
+    const lineDuration = 280;
+    const lineStagger = 90;
+    const customerDuration = 300;
 
-
-    // Customer leaves first
+    // ----------------------------------------
+    // Customer leaves downward
+    // ----------------------------------------
 
     const customerAnimation =
         experienceCustomer.animate(
@@ -174,7 +179,9 @@ async function animateTestimonialOut(lines) {
         );
 
 
+    // ----------------------------------------
     // Lines leave bottom → top
+    // ----------------------------------------
 
     const linesAnimation = [];
 
@@ -187,26 +194,29 @@ async function animateTestimonialOut(lines) {
         const positionFromBottom =
             lines.length - 1 - index;
 
+        const delay =
+            Math.max(
+                0,
+                customerDuration - 120 +
+                positionFromBottom * lineStagger
+            );
+
         const animation =
             lines[index].animate(
                 [
                     {
-                        transform: "translateY(0)"
+                        transform: "translateY(0)",
+                        opacity: 1
                     },
                     {
-                        transform: "translateY(100%)"
+                        transform: "translateY(100%)",
+                        opacity: 0
                     }
                 ],
                 {
                     duration: lineDuration,
-
-                    delay:
-                        customerDuration +
-                        positionFromBottom * lineStagger,
-
-                    easing:
-                        "cubic-bezier(0.65, 0, 0.35, 1)",
-
+                    delay,
+                    easing: "cubic-bezier(0.65, 0, 0.35, 1)",
                     fill: "forwards"
                 }
             );
@@ -215,8 +225,9 @@ async function animateTestimonialOut(lines) {
     }
 
 
-    // IMPORTANT:
+    // ----------------------------------------
     // Wait until everything finishes
+    // ----------------------------------------
 
     await Promise.all([
         customerAnimation.finished,
@@ -228,49 +239,73 @@ async function animateTestimonialOut(lines) {
 }
 
 
-// INCOMING ANIMATION
+// ========================================
+// TESTIMONIAL — INCOMING ANIMATION
+// ========================================
 
 async function animateTestimonialIn(lines) {
 
-    const lineDuration = 250;
-    const lineGap = 150;
-    const customerDuration = 400;
+    const lineDuration = 220;
+    const lineStagger = 70;
+    const customerDuration = 300;
 
+    // ----------------------------------------
     // Start every line hidden
+    // ----------------------------------------
+
     lines.forEach((line) => {
-        line.style.transform = "translateY(100%)";
+
+        line.style.transform =
+            "translateY(100%)";
+
         line.style.opacity = "0";
     });
 
-    // Reveal lines one by one
-    for (const line of lines) {
 
-        await line.animate(
-            [
+    // ----------------------------------------
+    // Lines enter with a stagger
+    // ----------------------------------------
+
+    const lineAnimations =
+        lines.map((line, index) => {
+
+            return line.animate(
+                [
+                    {
+                        transform: "translateY(100%)",
+                        opacity: 0
+                    },
+                    {
+                        transform: "translateY(0)",
+                        opacity: 1
+                    }
+                ],
                 {
-                    transform: "translateY(100%)",
-                    opacity: 0
-                },
-                {
-                    transform: "translateY(0)",
-                    opacity: 1
+                    duration: lineDuration,
+                    delay: index * lineStagger,
+                    easing: "cubic-bezier(0.76, 0, 0.24, 1)",
+                    fill: "forwards"
                 }
-            ],
-            {
-                duration: lineDuration,
-                easing: "cubic-bezier(0.76, 0, 0.24, 1)",
-                fill: "forwards"
-            }
-        ).finished;
+            );
 
-        // Small breathing space before next line
-        await new Promise((resolve) => {
-            setTimeout(resolve, lineGap);
         });
-    }
 
 
-    // Customer enters after all lines
+    // ----------------------------------------
+    // Wait for all lines to finish
+    // ----------------------------------------
+
+    await Promise.all(
+        lineAnimations.map(
+            (animation) => animation.finished
+        )
+    );
+
+
+    // ----------------------------------------
+    // Customer enters after lines
+    // ----------------------------------------
+
     await experienceCustomer.animate(
         [
             {
@@ -290,6 +325,10 @@ async function animateTestimonialIn(lines) {
     ).finished;
 }
 
+// ========================================
+// TESTIMONIAL — IMAGE ANIMATION
+// ========================================
+
 async function animateTestimonialImage(nextImage) {
 
     if (
@@ -299,7 +338,12 @@ async function animateTestimonialImage(nextImage) {
         experienceImage.src = nextImage;
         return;
     }
-    // Preload the next image first
+
+
+    // ----------------------------------------
+    // Preload the next image
+    // ----------------------------------------
+
     const image = new Image();
 
     image.src = nextImage;
@@ -310,7 +354,9 @@ async function animateTestimonialImage(nextImage) {
     });
 
 
+    // ----------------------------------------
     // Fade current image out
+    // ----------------------------------------
 
     await experienceImage.animate(
         [
@@ -320,28 +366,33 @@ async function animateTestimonialImage(nextImage) {
             },
             {
                 opacity: 0,
-                transform: "scale(1.025)"
+                transform: "scale(1.015)"
             }
         ],
         {
-            duration: 500,
+            duration: 350,
             easing: "cubic-bezier(0.76, 0, 0.24, 1)",
             fill: "forwards"
         }
     ).finished;
 
 
-    // New image is already loaded
+    // ----------------------------------------
+    // Swap image
+    // ----------------------------------------
+
     experienceImage.src = nextImage;
 
 
+    // ----------------------------------------
     // Fade new image in
+    // ----------------------------------------
 
     await experienceImage.animate(
         [
             {
                 opacity: 0,
-                transform: "scale(1.025)"
+                transform: "scale(1.015)"
             },
             {
                 opacity: 1,
@@ -349,7 +400,7 @@ async function animateTestimonialImage(nextImage) {
             }
         ],
         {
-            duration: 750,
+            duration: 450,
             easing: "cubic-bezier(0.76, 0, 0.24, 1)",
             fill: "forwards"
         }
@@ -359,14 +410,19 @@ async function animateTestimonialImage(nextImage) {
 
 
 
+// ========================================
+// TESTIMONIAL — PREVIOUS OUTGOING
+// ========================================
+
 async function animateTestimonialOutPrevious(lines) {
 
-    const lineDuration = 500;
-    const lineGap = 350;
-    const customerDuration = 550;
+    const lineDuration = 280;
+    const lineStagger = 90;
+    const customerDuration = 300;
 
-
-    // 1. Customer fades out FIRST
+    // ----------------------------------------
+    // Customer leaves upward
+    // ----------------------------------------
 
     const customerAnimation =
         experienceCustomer.animate(
@@ -388,87 +444,132 @@ async function animateTestimonialOutPrevious(lines) {
         );
 
 
-    await customerAnimation.finished;
+    // ----------------------------------------
+    // Lines leave top → bottom
+    // ----------------------------------------
 
-
-    // 2. Last line → first line
+    const linesAnimation = [];
 
     for (
-        let index = lines.length - 1;
-        index >= 0;
-        index--
+        let index = 0;
+        index < lines.length;
+        index++
     ) {
 
-        await lines[index].animate(
-            [
+        const positionFromTop = index;
+
+        const delay =
+            Math.max(
+                0,
+                customerDuration - 120 +
+                positionFromTop * lineStagger
+            );
+
+        const animation =
+            lines[index].animate(
+                [
+                    {
+                        transform: "translateY(0)",
+                        opacity: 1
+                    },
+                    {
+                        transform: "translateY(-100%)",
+                        opacity: 0
+                    }
+                ],
                 {
-                    transform: "translateY(0)",
-                    opacity: 1
-                },
-                {
-                    transform: "translateY(-100%)",
-                    opacity: 0
+                    duration: lineDuration,
+                    delay,
+                    easing: "cubic-bezier(0.65, 0, 0.35, 1)",
+                    fill: "forwards"
                 }
-            ],
-            {
-                duration: lineDuration,
-                easing: "cubic-bezier(0.65, 0, 0.35, 1)",
-                fill: "forwards"
-            }
-        ).finished;
+            );
 
-
-        await new Promise((resolve) => {
-            setTimeout(resolve, lineGap);
-        });
+        linesAnimation.push(animation);
     }
+
+
+    // ----------------------------------------
+    // Wait until everything finishes
+    // ----------------------------------------
+
+    await Promise.all([
+        customerAnimation.finished,
+
+        ...linesAnimation.map(
+            (animation) => animation.finished
+        )
+    ]);
 }
+
+
+// ========================================
+// TESTIMONIAL — PREVIOUS INCOMING
+// ========================================
 
 async function animateTestimonialInPrevious(lines) {
 
-    const lineDuration = 650;
-    const lineGap = 180;
-    const customerDuration = 600;
+    const lineDuration = 220;
+    const lineStagger = 70;
+    const customerDuration = 300;
 
-
-    // Start every line above its normal position
+    // ----------------------------------------
+    // Start every line above its position
+    // ----------------------------------------
 
     lines.forEach((line) => {
-        line.style.transform = "translateY(-100%)";
+
+        line.style.transform =
+            "translateY(-100%)";
+
         line.style.opacity = "0";
     });
 
 
-    // 1. First line → last line
+    // ----------------------------------------
+    // Lines enter with a stagger
+    // First line → last line
+    // ----------------------------------------
 
-    for (const line of lines) {
+    const lineAnimations =
+        lines.map((line, index) => {
 
-        await line.animate(
-            [
+            return line.animate(
+                [
+                    {
+                        transform: "translateY(-100%)",
+                        opacity: 0
+                    },
+                    {
+                        transform: "translateY(0)",
+                        opacity: 1
+                    }
+                ],
                 {
-                    transform: "translateY(-100%)",
-                    opacity: 0
-                },
-                {
-                    transform: "translateY(0)",
-                    opacity: 1
+                    duration: lineDuration,
+                    delay: index * lineStagger,
+                    easing: "cubic-bezier(0.76, 0, 0.24, 1)",
+                    fill: "forwards"
                 }
-            ],
-            {
-                duration: lineDuration,
-                easing: "cubic-bezier(0.76, 0, 0.24, 1)",
-                fill: "forwards"
-            }
-        ).finished;
+            );
 
-
-        await new Promise((resolve) => {
-            setTimeout(resolve, lineGap);
         });
-    }
 
 
-    // 2. Customer enters LAST
+    // ----------------------------------------
+    // Wait for all lines
+    // ----------------------------------------
+
+    await Promise.all(
+        lineAnimations.map(
+            (animation) => animation.finished
+        )
+    );
+
+
+    // ----------------------------------------
+    // Customer enters after lines
+    // ----------------------------------------
 
     await experienceCustomer.animate(
         [

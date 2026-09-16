@@ -124,7 +124,8 @@ margin-inline: auto;
 
     flex-shrink: 0;
 
-    width: 18px;
+    width: 22px;
+    height: 22px;
 
     color: var(--color-text-muted);
 
@@ -312,6 +313,52 @@ margin-inline: auto;
     cursor: pointer;
 }
 
+
+/* ========================================
+   BOOK TABLE — SCROLL REVEAL
+======================================== */
+
+.book-table__title,
+.book-table__description,
+.book-table__form-wrapper {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(25px);
+}
+
+/* Visible state */
+.book-table.book-table--title-visible .book-table__title {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+
+    transition:
+        opacity 700ms var(--ease-smooth),
+        filter 700ms var(--ease-smooth),
+        transform 750ms var(--ease-editorial);
+}
+
+.book-table.book-table--description-visible .book-table__description {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+
+    transition:
+        opacity 600ms var(--ease-smooth),
+        filter 600ms var(--ease-smooth),
+        transform 650ms var(--ease-editorial);
+}
+
+.book-table.book-table--form-visible .book-table__form-wrapper {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+
+    transition:
+        opacity 700ms var(--ease-smooth),
+        filter 700ms var(--ease-smooth),
+        transform 750ms var(--ease-editorial);
+}
 @media (max-width: 1024px) {
 
 }

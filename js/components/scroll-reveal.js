@@ -167,3 +167,31 @@ if(dish) {
     );
      dishObserver.observe(dish);
 }
+
+
+const bookTable = document.querySelector(".book-table");
+
+if (bookTable) {
+    const bookTableObserver = new IntersectionObserver(
+        ([entry], observer) => {
+            if (!entry.isIntersecting) return;
+
+            bookTable.classList.add("book-table--title-visible");
+
+            setTimeout(() => {
+                bookTable.classList.add("book-table--description-visible");
+            }, 150);
+
+            setTimeout(() => {
+                bookTable.classList.add("book-table--form-visible");
+            }, 300);
+
+            observer.unobserve(entry.target);
+        },
+        {
+            threshold: 0.25,
+        }
+    );
+
+    bookTableObserver.observe(bookTable);
+}

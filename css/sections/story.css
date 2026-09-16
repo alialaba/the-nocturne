@@ -21,7 +21,6 @@
 
 .story__visual {
     position: relative;
-    min-height: 100%;
     border-radius: 100%;
     aspect-ratio: 1/1;
     pointer-events: none;
@@ -140,17 +139,71 @@
 }
 
 
-@media (max-width: 1024px) {
+/* =========================================================
+   STORY SCROLL REVEAL
+   ========================================================= */
 
-    .story__visual {
-        grid-column: 1 / -1;
-        left: 10%;
+.story__visual {
+    opacity: 0;
+    transform: scale(0.94);
+    transition:
+        opacity 900ms var(--ease-smooth),
+        transform 1200ms var(--ease-editorial);
+}
+
+.story__title {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(40px);
+    transition:
+        opacity 800ms var(--ease-smooth),
+        filter 900ms var(--ease-smooth),
+        transform 900ms var(--ease-editorial);
+}
+
+.story__description {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(30px);
+    transition:
+        opacity 800ms var(--ease-smooth),
+        filter 800ms var(--ease-smooth),
+        transform 800ms var(--ease-editorial);
+}
+
+
+.story.story--visual-visible .story__visual {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.story.story--title-visible .story__title {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.story.story--description-visible .story__description {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .story__inner {
+        grid-template-columns: 1fr;
+        gap: clamp(32px, 6vw, 64px);
+    }
+      .story__visual {
+        grid-column: 1;
+        left: 0;
+        justify-self: end;
+        width: min(70vw, 520px);
     }
 
     .story__content {
-        grid-column: 1 / -1;
+        grid-column: 1;
     }
-
 
     .story__moonlight {
 

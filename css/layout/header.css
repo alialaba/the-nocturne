@@ -18,7 +18,7 @@
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    /* padding-top: 20px; */
+   
     
     
   }
@@ -227,11 +227,6 @@ body.menu-open {
             1
         );
 }
-/* .site-menu.is-open {
-    visibility: visible;
-
-    pointer-events: auto;
-} */
 
 .site-menu.is-open {
 
@@ -286,8 +281,12 @@ body.menu-open {
         1fr;
 
     justify-items: center;
+  transform: scale(1);
+    filter: blur(0);
 
-      transition: transform 700ms cubic-bezier(0.4, 0, 1, 1), filter 700ms ease;
+    transition:
+        transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+        filter 700ms ease;
 }
 
 
@@ -416,12 +415,147 @@ body.menu-open {
 }
 
 
-.site-menu.is-closing .site-menu__item:nth-child(1) { transition-delay: 160ms; }
-.site-menu.is-closing .site-menu__item:nth-child(2) { transition-delay: 120ms; }
-.site-menu.is-closing .site-menu__item:nth-child(3) { transition-delay: 80ms; }
-.site-menu.is-closing .site-menu__item:nth-child(4) { transition-delay: 40ms; }
-.site-menu.is-closing .site-menu__item:nth-child(5) { transition-delay: 0ms; }
 
+/* =========================================
+   SITE MENU — CLOSE ANIMATION
+   ========================================= */
+
+/* Keep the stage in place while its content exits */
+.site-menu.is-closing .site-menu__backdrop {
+    transform: translateY(-100%);
+
+    transition:
+        transform 700ms cubic-bezier(
+            0.77,
+            0,
+            0.175,
+            1
+        ) 700ms;
+}
+
+
+/* Navigation exits upward, from bottom to top */
+.site-menu.is-closing .site-menu__item {
+    opacity: 0;
+
+    transform:
+        translateY(-24px);
+
+    transition:
+        opacity 350ms ease,
+        transform 500ms cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+}
+
+
+/* Reverse stagger:
+   bottom item leaves first */
+.site-menu.is-closing
+.site-menu__item:nth-child(5) {
+    transition-delay: 0ms;
+}
+
+.site-menu.is-closing
+.site-menu__item:nth-child(4) {
+    transition-delay: 60ms;
+}
+
+.site-menu.is-closing
+.site-menu__item:nth-child(3) {
+    transition-delay: 120ms;
+}
+
+.site-menu.is-closing
+.site-menu__item:nth-child(2) {
+    transition-delay: 180ms;
+}
+
+.site-menu.is-closing
+.site-menu__item:nth-child(1) {
+    transition-delay: 240ms;
+}
+
+
+/* Content gently retreats */
+.site-menu.is-closing .site-menu__content {
+    transform:
+        scale(0.985);
+
+    filter:
+        blur(3px);
+
+    transition:
+        transform 600ms cubic-bezier(
+            0.4,
+            0,
+            1,
+            1
+        ),
+        filter 600ms ease;
+}
+
+
+/* Mobile lamp retreats upward */
+.site-menu.is-closing .site-menu__lamp {
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        translateY(-10px);
+
+    transition:
+        opacity 350ms ease,
+        transform 500ms cubic-bezier(
+            0.4,
+            0,
+            1,
+            1
+        );
+}
+
+.site-menu.is-closing .site-menu__lamp-glow {
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        translateY(-8px)
+        scale(0.94);
+
+    transition:
+        opacity 500ms ease,
+        transform 700ms cubic-bezier(
+            0.4,
+            0,
+            1,
+            1
+        );
+}
+
+
+/* Finally: the entire menu closes like a curtain */
+.site-menu.is-closing {
+    visibility: visible;
+    pointer-events: none;
+    opacity: 1;
+
+    clip-path: inset(0 0 100% 0);
+
+    transition:
+        clip-path 550ms cubic-bezier(
+            0.77,
+            0,
+            0.175,
+            1
+        ) 450ms,
+
+        opacity 250ms ease 450ms,
+
+        visibility 0s linear 1000ms;
+}
 .site-menu__footer {
     grid-row: 3;
 
@@ -485,7 +619,8 @@ body.menu-open {
 
     place-items: center;
 
-    width: 38px;
+    width: 27px;
+    height: 27px;
 
     aspect-ratio: 1;
 

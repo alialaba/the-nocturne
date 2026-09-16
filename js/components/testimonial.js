@@ -147,9 +147,9 @@ experienceImage.src =
 
 async function animateTestimonialOut(lines) {
 
-    const lineDuration = 500;
-    const lineStagger = 350;
-    const customerDuration = 550;
+    const lineDuration = 400;
+    const lineStagger = 180;
+    const customerDuration = 450;
 
 
     // Customer leaves first
@@ -232,9 +232,9 @@ async function animateTestimonialOut(lines) {
 
 async function animateTestimonialIn(lines) {
 
-    const lineDuration = 650;
-    const lineGap = 180;
-    const customerDuration = 600;
+    const lineDuration = 250;
+    const lineGap = 150;
+    const customerDuration = 400;
 
     // Start every line hidden
     lines.forEach((line) => {

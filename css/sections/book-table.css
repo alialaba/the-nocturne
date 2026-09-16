@@ -53,6 +53,8 @@
  border-top: 1px solid var(--color-border-hairline);
     border-bottom: 1px solid var(--color-border-hairline);
 
+margin-inline: auto;
+
     
 }
 
@@ -274,9 +276,6 @@
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-
-    cursor: pointer;
-
     transition:
         background-color 250ms ease,
         color 250ms ease;
@@ -288,8 +287,8 @@
     align-items: center;
     justify-content: center;
 
-    width: 34px;
-    height: 34px;
+    width: 27px;
+    height: 27px;
 
     border-radius: 50%;
 
@@ -307,6 +306,10 @@
 .book-table__submit:focus-visible {
     outline: 1px solid var(--color-text-primary);
     outline-offset: -4px;
+}
+.book-table__submit:hover {
+    opacity: 0.85;
+    cursor: pointer;
 }
 
 @media (max-width: 1024px) {
@@ -401,5 +404,15 @@
 
     .book-table__submit {
         min-height: 50px;
+        background-color: var(--color-text-primary);
+        color: var(--color-bg-base);
+        font-weight: 600;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .book-table__submit-icon{
+        display: none;
     }
 }

@@ -327,8 +327,6 @@
     letter-spacing: 0.10em;
 
     text-transform: uppercase;
-
-    cursor: pointer;
 }
 
 
@@ -364,10 +362,6 @@
     transform: translateX(4px);
 }
 
-.hero__booking:focus-visible {
-    outline: 1px solid var(--color-text);
-    outline-offset: 7px;
-}
 
 /* =========================================================
     HERO META
@@ -409,6 +403,12 @@
 }
 
 /* Countdown text */
+
+.hero-countdown__content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 
 .hero-countdown__label-wrap,
 .hero-countdown__message-wrap {

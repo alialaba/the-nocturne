@@ -7,6 +7,7 @@
     min-height: 100svh;
     background: var(--color-bg-base);
     overflow: hidden;
+     padding-block: clamp(80px, 9vw, 140px);
 }
 
 
@@ -401,6 +402,11 @@
     }
 }
 @media (max-width: 767px) {
+
+     .experience {
+        min-height: 100svh;
+    }
+
       .experience__block {
         display: block;
         padding: 0;
@@ -414,12 +420,6 @@
         min-height: 100svh;
         padding: 120px 24px 30px;
     }
-
-    
-    .experience {
-        min-height: 100svh;
-    }
-
 
     /* -------------------------------
        Header

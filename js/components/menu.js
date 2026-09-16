@@ -53,7 +53,7 @@ function closeMenu() {
 
     window.setTimeout(() => {
         siteMenu.classList.remove("is-closing");
-    }, 950); // matches your existing 900ms clip-path close
+    }, 1000); // matches your existing 900ms clip-path close
 }
 
 

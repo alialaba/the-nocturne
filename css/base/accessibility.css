@@ -33,4 +33,19 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+
+    .story__visual,
+.story__title,
+.story__description {
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.philosophy-card {
+    opacity: 1;
+    filter: none;
+    transform: translateY(var(--card-offset));
+    transition: none;
+}
 }

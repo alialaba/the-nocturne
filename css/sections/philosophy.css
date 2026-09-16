@@ -1,12 +1,13 @@
 .philosophy {
     position: relative;
-    min-height: 700px;
+    min-height: 100svh;
     background: var(--color-bg-base);
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     isolation: isolate;
+     
 }
 
 .philosophy::before {
@@ -15,7 +16,7 @@
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background: url(./assets/fio-unsplash.jpg) center / cover no-repeat;
+    background: url(/assets/fio-unsplash.jpg) center / cover no-repeat;
     -webkit-mask-image: radial-gradient(circle at 50% 45%, black 0%, transparent 60%);
     mask-image: radial-gradient(circle at 50% 45%, black 0%, transparent 60%);
     opacity: 0.4;
@@ -24,6 +25,7 @@
 .philosophy__cards-outer {
     position: relative;
     z-index: 2;
+    margin: 200px 0;
 }
 
 .philosophy__cards-track {
@@ -33,15 +35,19 @@
 }
 
 .philosophy-card {
-    --card-offset: 0;
-    transform: translateY(var(--card-offset));
+    --card-offset: 0px;
+
+    transform:
+        translateY(calc(var(--card-offset) + 32px));
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     padding: 14px;
-    min-height: 360px;
-    background:
-        rgba(20, 15, 10, 0.38);
+    min-height: 320px;
+
+    background: rgba(20, 15, 10, 0.38);
 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -50,13 +56,25 @@
 
     overflow: hidden;
     z-index: 1;
+
+    opacity: 0;
+    filter: blur(6px);
+
+    transition:
+        opacity 700ms var(--ease-smooth),
+        filter 800ms var(--ease-smooth),
+        transform 850ms var(--ease-editorial);
 }
 
 .philosophy-card:nth-child(3),
 .philosophy-card:nth-child(4) {
-    transform: translateY(140px);
+    --card-offset: 80px;
 }
-
+.philosophy-card.is-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(var(--card-offset));
+}
 .philosophy__card-header {
     position: relative;
     display: flex;
@@ -78,6 +96,30 @@
     line-height: 1.5;
 }
 
+/* =========================================================
+   PHILOSOPHY SCROLL REVEAL
+   ========================================================= */
+
+.philosophy-card {
+    opacity: 0;
+    filter: blur(8px);
+
+    transform:
+        translateY(calc(var(--card-offset) + 45px));
+
+    transition:
+        opacity 500ms var(--ease-smooth),
+        filter 600ms var(--ease-smooth),
+        transform 650ms var(--ease-editorial);
+}
+
+.philosophy-card.is-visible {
+    opacity: 1;
+    filter: blur(0);
+
+    transform:
+        translateY(var(--card-offset));
+}
 @media (max-width: 1024px) {
     .philosophy__cards-outer {
         overflow: hidden;
@@ -103,7 +145,6 @@
     .philosophy-card:nth-child(3),
     .philosophy-card:nth-child(4) {
         --card-offset: 0px;
-        transform: translateY(var(--card-offset));
     }
 
     .dots {

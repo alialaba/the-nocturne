@@ -48,4 +48,23 @@
     transform: translateY(var(--card-offset));
     transition: none;
 }
+
+.room__item,
+.room__title,
+.room__description,
+.room__button {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+}
+
+.dish__title,
+.dish__intro,
+.dish__card {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+}
 }

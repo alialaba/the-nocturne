@@ -233,36 +233,25 @@ margin-inline: auto;
 }
 
 
-/* Title */
+/* ========================================
+   ROOM — CONTENT REVEAL
+======================================== */
 
-.room__title {
+.room__title,
+.room__description,
+.room__button {
     opacity: 0;
-    filter: blur(8px);
-    transform: translateY(40px);
-
-    transition:
-        opacity 800ms var(--ease-smooth),
-        filter 900ms var(--ease-smooth),
-        transform 900ms var(--ease-editorial);
+    filter: blur(6px);
+    transform: translateY(30px);
 }
 
 .room.room--title-visible .room__title {
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
-}
-
-
-/* Description */
-
-.room__description {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateY(24px);
-
     transition:
         opacity 700ms var(--ease-smooth),
-        filter 750ms var(--ease-smooth),
+        filter 700ms var(--ease-smooth),
         transform 750ms var(--ease-editorial);
 }
 
@@ -270,23 +259,20 @@ margin-inline: auto;
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
-}
-
-
-/* Button */
-
-.room__button {
-    opacity: 0;
-    transform: translateY(18px);
-
     transition:
-        opacity 600ms var(--ease-smooth),
-        transform 650ms var(--ease-editorial);
+        opacity 650ms var(--ease-smooth),
+        filter 650ms var(--ease-smooth),
+        transform 700ms var(--ease-editorial);
 }
 
 .room.room--button-visible .room__button {
     opacity: 1;
+    filter: blur(0);
     transform: translateY(0);
+    transition:
+        opacity 600ms var(--ease-smooth),
+        filter 600ms var(--ease-smooth),
+        transform 650ms var(--ease-editorial);
 }
 @media (max-width: 1024px) {
     .room__block {

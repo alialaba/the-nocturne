@@ -140,3 +140,30 @@ if (room) {
 
     roomObserver.observe(room);
 }
+
+const dish = document.querySelector(".dish");
+
+if(dish) {
+    const dishObserver = new IntersectionObserver(
+        ([entry], observer)=>{
+           if(!entry.isIntersecting) return;
+             if (!entry.isIntersecting) return;
+
+            dish.classList.add("dish--title-visible");
+
+            setTimeout(() => {
+                dish.classList.add("dish--intro-visible");
+            }, 180);
+
+            setTimeout(() => {
+                dish.classList.add("dish--cards-visible");
+            }, 350);
+
+            observer.unobserve(entry.target);
+        },
+         {
+            threshold: 0.3,
+        }
+    );
+     dishObserver.observe(dish);
+}

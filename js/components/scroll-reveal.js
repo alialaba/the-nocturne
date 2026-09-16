@@ -102,3 +102,41 @@ if (window.matchMedia("(max-width: 1024px)").matches) {
         cardObserver.observe(card);
     });
 }
+
+
+
+
+/* =========================================================
+   ROOM SCROLL REVEAL
+   ========================================================= */
+
+const room = document.querySelector(".room");
+
+if (room) {
+    const roomObserver = new IntersectionObserver(
+        ([entry], observer) => {
+            if (!entry.isIntersecting) return;
+
+            room.classList.add("room--list-visible");
+
+            setTimeout(() => {
+                room.classList.add("room--title-visible");
+            }, 180);
+
+            setTimeout(() => {
+                room.classList.add("room--description-visible");
+            }, 420);
+
+            setTimeout(() => {
+                room.classList.add("room--button-visible");
+            }, 600);
+
+            observer.unobserve(entry.target);
+        },
+        {
+            threshold: 0.3,
+        }
+    );
+
+    roomObserver.observe(room);
+}

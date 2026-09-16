@@ -176,6 +176,118 @@ margin-inline: auto;
     transform: translateX(4px);
 }
 
+
+/* =========================================================
+   ROOM SCROLL REVEAL
+   ========================================================= */
+
+.room__list {
+    opacity: 1;
+}
+
+.room__item {
+    opacity: 0;
+    transform: translateX(-35px);
+    filter: blur(4px);
+
+    transition:
+        opacity 500ms var(--ease-smooth),
+        transform 650ms var(--ease-editorial),
+        filter 600ms var(--ease-smooth);
+}
+
+.room.room--list-visible .room__item {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+}
+
+/* Individual sweep timing */
+
+.room.room--list-visible .room__item:nth-child(1) {
+    transition-delay: 0ms;
+}
+
+.room.room--list-visible .room__item:nth-child(2) {
+    transition-delay: 100ms;
+}
+
+.room.room--list-visible .room__item:nth-child(3) {
+    transition-delay: 200ms;
+}
+
+.room.room--list-visible .room__item:nth-child(4) {
+    transition-delay: 300ms;
+}
+
+.room.room--list-visible .room__item:nth-child(5) {
+    transition-delay: 400ms;
+}
+
+.room.room--list-visible .room__item:nth-child(6) {
+    transition-delay: 500ms;
+}
+
+.room.room--list-visible .room__item:nth-child(7) {
+    transition-delay: 600ms;
+}
+
+
+/* Title */
+
+.room__title {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(40px);
+
+    transition:
+        opacity 800ms var(--ease-smooth),
+        filter 900ms var(--ease-smooth),
+        transform 900ms var(--ease-editorial);
+}
+
+.room.room--title-visible .room__title {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+
+/* Description */
+
+.room__description {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(24px);
+
+    transition:
+        opacity 700ms var(--ease-smooth),
+        filter 750ms var(--ease-smooth),
+        transform 750ms var(--ease-editorial);
+}
+
+.room.room--description-visible .room__description {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+
+/* Button */
+
+.room__button {
+    opacity: 0;
+    transform: translateY(18px);
+
+    transition:
+        opacity 600ms var(--ease-smooth),
+        transform 650ms var(--ease-editorial);
+}
+
+.room.room--button-visible .room__button {
+    opacity: 1;
+    transform: translateY(0);
+}
 @media (max-width: 1024px) {
     .room__block {
 
@@ -293,14 +405,18 @@ margin-inline: auto;
         height: auto;
         padding:
             0 clamp(1.5rem, 6vw, 2rem);
-        transform:
-            translateY(-50%);
+       transform: translateX(-24px) translateY(-50%);
         gap: 18px;
         background: transparent;
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
 
     }
+
+       .room.room--list-visible .room__list {
+        transform: translateX(0) translateY(-50%);
+    }
+
 
     .room__list::before {
         left:
@@ -325,4 +441,6 @@ margin-inline: auto;
 
     }
 
+
+ 
 }
